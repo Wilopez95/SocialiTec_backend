@@ -6,6 +6,33 @@ const jwt = require('jsonwebtoken');
 const Usuario = require('../models/usuario');
 const checkAuth = require('../middleware/check-auth');
 
+router.get('/',(req, res, next)=> {
+    Usuario.find()
+    .select("_id nombre correo imagenUrl")
+    .exec()
+    .then(docs => {
+        const response ={
+            count: docs.length,
+            Usuarios :docs.map(doc => {
+                return {
+                    _id: doc._id,
+                    nombre: doc.nombre,
+                    correo: doc.correo,
+                    imagenUrl: doc.imagenUrl,               
+
+                }
+           })
+        };
+            res.status(200).json(response);     
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json({
+            error : err
+        });
+    });
+});
+
 
 router.post('/registrar',(req, res, next) => {
     Usuario.find({correo:req.body.correo})
@@ -104,16 +131,24 @@ router.post('/Iniciarsesion',(req, res, next)=> {
     });
 });
 
-
-router.get('/:usuariosId',(req,res, next)=>{
-    const id = req.params.usuariosId
-});
-
-router.delete('/:usuariosId',(req,res, next)=>{
-    const id = req.params.usuariosId
-    res.status(200).json({
-        mensaje: 'publicar usuarios' + id
+//Actualizar foto de perfil 
+router.patch('/img/:Idusuario',(req, res, next)=> {
+    const id = req.params.Idusuario;
+    const updateOps = {};
+    Usuario.update({ _id: id },{ imagenUrl: req.body.value})
+    .exec()
+    .then(result => {
+        console.log(result);
+        res.status(200).json({
+            message: 'Sucesfull'
+        });
     })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json({
+           error: err 
+        });    
+    }); 
 });
 
 

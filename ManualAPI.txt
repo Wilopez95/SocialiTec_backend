@@ -1,33 +1,47 @@
 ------Noticias------
-GET:    http://localhost:3000/noticias
-POST:
+GET:    http://ec2-18-188-107-183.us-east-2.compute.amazonaws.com/noticias
+
+POST:	http://ec2-18-188-107-183.us-east-2.compute.amazonaws.com/noticias
+{
+	"titulo": "Se murio el semestre",
+	"texto": "Se murio el semestre despues de  15 meses en prision",
+	"imagenUrl": "imagenurlimagenurl"
+}  
+ puede ser tambien: 
+{
+	"titulo": "Se murio el semestre",
+	"texto": "Se murio el semestre despues de  15 meses en prision"
+}
 
 
 ------Mensajes------
-GET:    http://localhost:3000/mensajes
+GET:    http://ec2-18-188-107-183.us-east-2.compute.amazonaws.com/mensajes
 
-Obtener un mensaje especifico a partir de un ID;
-GET:    http://localhost:3000/mensajes/(idmensaje)
+
+Obtener los mensajes que se enviaron a un usuario
+GET:    http://ec2-18-188-107-183.us-east-2.compute.amazonaws.com/mensajes/5b155dd2882c2f265453f315
+
 
 Enviar un mensaje a otro usuario
-POST:   http://localhost:3000/mensajes 
+POST:   http://ec2-18-188-107-183.us-east-2.compute.amazonaws.com/mensajes 
 {
-	"emisor": "Juan",
-	"destinatario": "Pedro",
+	"emisorId": "5b14c3562769fe36145c4ee7",
+	"destinatarioId": "5b155dd2882c2f265453f315",
 	"mensaje": "Hola amigo como estas?"
 }
 
 
-
 ------Publicaciones------
-GET:    http://localhost:3000/publicaciones
+GET:    http://ec2-18-188-107-183.us-east-2.compute.amazonaws.com/publicaciones
 POST:
 
 
 ------Usuarios------
+Obtener todos los usuarios 
+GET:	http://ec2-18-188-107-183.us-east-2.compute.amazonaws.com/usuarios
 
 Verificar si un usuario ya inicio sesion:
-POST:   http://localhost:3000/usuarios/verificar
+POST:   http://ec2-18-188-107-183.us-east-2.compute.amazonaws.com/usuarios/verificar
 {
 	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IldpbG9wZXo5NUBnbWFpbC5jb20iLCJ1c2VySWQiOiI1YjE1NjNlN2I3NjMxNzJmNzQyOGY0MTciLCJuYW1lIjoiV2xzb24gTG9wZXoiLCJpYXQiOjE1MjgxMjkwNTksImV4cCI6MTUyODk5MzA1OX0.v_VtGTr5Bbk5oNKjfVRrrZtwg4DddWruBGAv6thfdpc"
 }
@@ -35,7 +49,7 @@ POST:   http://localhost:3000/usuarios/verificar
 
 
 ->Un usuario incia sesion:
-POST:   http://localhost:3000/usuarios/Iniciarsesion
+POST:   http://ec2-18-188-107-183.us-east-2.compute.amazonaws.com/usuarios/Iniciarsesion
 {
 	"correo":"Wilopez95@gmail.com",
 	"contraseña":"Wilopez"
@@ -43,7 +57,7 @@ POST:   http://localhost:3000/usuarios/Iniciarsesion
 
 
 ->Registrar un nuevo usuario:
-POST:   http://localhost:3000/usuarios/registrar
+POST:   http://ec2-18-188-107-183.us-east-2.compute.amazonaws.com/usuarios/registrar
 {
 	"correo":"Wilopez95@gmail.com",
 	"contraseña":"Password",
@@ -56,4 +70,11 @@ El usuario se puede registrar sin necesidad de una foto , esta se podra actualiz
 	"correo":"Wilopezru95@gmail.com",
 	"contraseña":"contradeprueba",
 	"nombre": "Armando Rubi"
+}
+
+
+Actualizar la imagen de un usuario
+PATCH: http://ec2-18-188-107-183.us-east-2.compute.amazonaws.com/usuarios/img/(5b14c3562769fe36145c4ee7)
+{
+	"https://static.classora.com/files/uploads/images/topics/21/2257/main.jpg"
 }

@@ -1,15 +1,43 @@
 const express  = require ('express');
 const router = express.Router();
-const moongose = require('mongoose');
+const mongoose = require('mongoose');
 
 const Mensaje = require('../models/mensaje');
 
 
+
+router.get('/:UsuarioId',(req, res, next)=>{
+    const id = req.params.UsuarioId;
+    Mensaje.find({destinatario:id})
+    .select("_id emisor mensaje")
+    .exec()
+    .then(result=>{
+        if(result.length<1){
+            return res.status(401).json({
+            message: 'No hay mensajes para este usuario'
+            });
+        }else{
+            return res.status(201).json({
+            message: 'Sucesfull',
+            result
+            });
+        }
+    })
+    .catch(err=> {
+        console.log(err);
+        res.status(500).json({ error: err });
+    });
+
+    
+});
+
+
+//Postear un nuevo mensaje
 router.post('/',(req, res, next) => {
     const mensaje = new Mensaje({
-        _id: new moongose.Types.ObjectId(),
-        emisor: req.body.emisor,
-        destinatario: req.body.destinatario,
+        _id: new mongoose.Types.ObjectId(),
+        emisor: req.body.emisorId,
+        destinatario: req.body.destinatarioId,
         mensaje: req.body.mensaje,
     });
     mensaje.save().then(result=>{
@@ -19,33 +47,6 @@ router.post('/',(req, res, next) => {
     res.status(201).json({
         mensaje: "Se ha creado el nuevo post de mensaje",
         mensajeenviado: mensaje
-    })
-});
-
-router.get('/',(req, res, next) => {
-    res.status(200).json({
-        mensaje: 'obtener mensajes'
-    })
-});
-
-router.get('/:mensajesId',(req,res, next)=>{
-    const id = req.params.mensajesId
-    Mensaje.findById(id)
-    .exec()
-    .then(doc => {
-        console.log(doc);
-        res.status(200).json(doc);
-    })
-    .catch(err => {
-        console.log(err);
-        res.status(500).json({error: err});
-    });
-});
-
-router.delete('/:mensajesId',(req,res, next)=>{
-    const id = req.params.mensajesId
-    res.status(200).json({
-        mensaje: 'publicar mensajes' + id
     })
 });
 
