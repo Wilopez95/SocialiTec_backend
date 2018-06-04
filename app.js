@@ -15,7 +15,7 @@ app.set('view engine','ejs');
 const rutaNoticias = require('./api/routes/noticias');
 const rutaMensajes = require('./api/routes/mensajes');
 const rutaPublicacions = require('./api/routes/publicaciones');
-const rutaIndex = require('./api/routes/index');
+//const rutaIndex = require('./api/routes/index');
 const rutaBackoffice = require('./api/routes/backoffice');
 const rutaUsers = require('./api/routes/usuarios');
 
@@ -45,7 +45,7 @@ app.use('/noticias', rutaNoticias);
 app.use('/mensajes', rutaMensajes);
 app.use('/publicaciones', rutaPublicacions);
 app.use('/backoffice', rutaBackoffice);
-app.use(rutaIndex);
+//app.use(rutaIndex);
 app.use('/usuarios', rutaUsers);
 
 
