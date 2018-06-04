@@ -1,0 +1,46 @@
+"7:00"+space+"11:00"+space+"17:00"+enter+
+"7:10"+space+"11:30"+space+"17:15"+enter+
+"7:15"+space+"11:40"+space+"17:30"+enter+
+"7:20"+space+"12:50"+space+"17:45"+enter+
+"7:40"+space+"13:00"+space+"18:00"+enter+
+"7:50"+space+"13:50"+space+"18:15"+enter+
+"8:00"+space+"14:30"+space+"18:30"+enter+
+"9:00"+space+"15:25"+space+"18:45"+enter+
+"9:15"+space+"16:10"+space+"19:15"+enter+
+"10:00"+space+"16:45"+space+"19:45"+enter+
+
+"7:40"+space+"8:00"+space+"11:45
+
+"8:30  "+space+"15:10"+space+"18:30"+enter+
+"9:30  "+space+"15:40"+space+"18:45"+enter+
+"10:30"+space+"16:00"+space+"19:00"+enter+
+"11:15"+space+"16:30"+space+"19:35"+enter+
+"11:30"+space+"16:40"+space+"20:00"+enter+
+"12:00"+space+"17:00"+space+"20:30"+enter+
+"12:10"+space+"17:15"+space+"21:00"+enter+
+"12:30"+space+"17:30"+space+"21:30"+enter+
+"13:10"+space+"18:00"+enter+
+"14:10"+space+"18:15"
+
+TEC - Cartago - Sábado  ₡150
+"12:00"+space+"16:00"+enter+  
+"12:40"+space+"16:40"
+
+
+
+TRENES
+
+"San José"+space+"Cartago"+space+"Basílica"+enter+
+"6:30"+space+"7:22"+space+"7:25"+enter+
+"7:31"+space+"8:23"+space+"8:26"+enter+
+"7:55"+space+"8:47"+enter+   
+"15:00"+space+"15:52"+space+"15:55"+enter+
+"15:30"+space+"16:22"+enter+          
+"16:00"+space+"16:52"+space+"16:55"+enter+
+"16:40"+space+"17:32"+enter+          
+"17:00"+space+"17:52"+space+" 17:55"+enter+
+"17:30"+space+"18:22"+enter+          
+"18:00"+space+"18:52"+space+"18:55"+enter+
+"18:30"+space+"19:22"+enter+          
+"18:55"+space+"17:47"+space+"19:50"+enter+
+"19:30"+space+"20:22"+enter

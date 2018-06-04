@@ -1,0 +1,59 @@
+------Noticias------
+GET:    http://localhost:3000/noticias
+POST:
+
+
+------Mensajes------
+GET:    http://localhost:3000/mensajes
+
+Obtener un mensaje especifico a partir de un ID;
+GET:    http://localhost:3000/mensajes/(idmensaje)
+
+Enviar un mensaje a otro usuario
+POST:   http://localhost:3000/mensajes 
+{
+	"emisor": "Juan",
+	"destinatario": "Pedro",
+	"mensaje": "Hola amigo como estas?"
+}
+
+
+
+------Publicaciones------
+GET:    http://localhost:3000/publicaciones
+POST:
+
+
+------Usuarios------
+
+Verificar si un usuario ya inicio sesion:
+POST:   http://localhost:3000/usuarios/verificar
+{
+	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IldpbG9wZXo5NUBnbWFpbC5jb20iLCJ1c2VySWQiOiI1YjE1NjNlN2I3NjMxNzJmNzQyOGY0MTciLCJuYW1lIjoiV2xzb24gTG9wZXoiLCJpYXQiOjE1MjgxMjkwNTksImV4cCI6MTUyODk5MzA1OX0.v_VtGTr5Bbk5oNKjfVRrrZtwg4DddWruBGAv6thfdpc"
+}
+
+
+
+->Un usuario incia sesion:
+POST:   http://localhost:3000/usuarios/Iniciarsesion
+{
+	"correo":"Wilopez95@gmail.com",
+	"contraseña":"Wilopez"
+}
+
+
+->Registrar un nuevo usuario:
+POST:   http://localhost:3000/usuarios/registrar
+{
+	"correo":"Wilopez95@gmail.com",
+	"contraseña":"Password",
+	"nombre": "Wlson Lopez",
+	"imagenUrl":"https://static.classora.com/files/uploads/images/topics/21/2257/main.jpg"
+}
+
+El usuario se puede registrar sin necesidad de una foto , esta se podra actualizar despues 
+{
+	"correo":"Wilopezru95@gmail.com",
+	"contraseña":"contradeprueba",
+	"nombre": "Armando Rubi"
+}
