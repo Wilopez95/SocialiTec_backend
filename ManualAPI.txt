@@ -33,8 +33,19 @@ POST:   http://ec2-18-188-107-183.us-east-2.compute.amazonaws.com/mensajes
 
 ------Publicaciones------
 GET:    http://ec2-18-188-107-183.us-east-2.compute.amazonaws.com/publicaciones
-POST:
-
+POST:	http://ec2-18-188-107-183.us-east-2.compute.amazonaws.com/publicaciones
+{
+	"titulo": "Se murio el semestre",
+	"autorId": "5b14c3562769fe36145c4ee7",
+	"texto": "Se murio el semestre despues de  15 meses en prision",
+	"imagenUrl": "imagenurlimagenurl"
+}
+o
+{
+	"titulo": "Se murio el semestre",
+	"autorId": "5b14c3562769fe36145c4ee7",
+	"texto": "Se murio el semestre despues de  15 meses en prision"
+}
 
 ------Usuarios------
 Obtener todos los usuarios 
